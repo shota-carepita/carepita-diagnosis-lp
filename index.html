@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>採用完全代行 一律 ¥100,000〜｜ケアぴた</title>
+  <meta name="description" content="採用人数に関係なく一律 ¥100,000〜。スカウト・求人票作成・効果検証までまるっと採用完全代行。無料個別診断で勝ち筋も可視化。" />
+
+  <style>
+    :root{
+      --bg:#fff;
+      --pink:#fff1ef;
+      --pink2:#ffe6e3;
+      --main:#ff7a78;
+      --main2:#ff6a67;
+      --green:#58c45a;
+      --green2:#49b74b;
+      --text:#3f3f3f;
+      --muted:#6b6b6b;
+      --line:#f2d7d3;
+
+      --radius: 26px;
+      --radiusL: 46px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* ===== Header (simple, carepita-ish) ===== */
+    .header{
+      position: sticky; top:0; z-index: 50;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .headerInner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding: 14px 0;
+    }
+    .brandLogo{
+      display:inline-flex; align-items:center; gap:10px;
+      font-weight: 900; letter-spacing:.02em;
+      color: var(--main);
+      font-size: 20px;
+    }
+    .brandLogo .dot{ width:10px; height:10px; border-radius:50%; background: var(--main); display:inline-block; }
+    .nav{
+      display:flex; gap: 10px; flex-wrap: wrap;
+      color:#666; font-weight: 800; font-size: 13px;
+    }
+    .nav a{ padding: 8px 10px; border-radius: 999px; }
+    .nav a:hover{ background: rgba(255,122,120,.10); color: var(--main2); }
+    .nav .pill{ border: 1px solid rgba(255,122,120,.30); background: rgba(255,255,255,.85); color: var(--main2); }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 12px 18px; border-radius: 999px; border: 1px solid transparent;
+      font-weight: 900; cursor:pointer;
+      transition: transform .15s ease, filter .15s ease;
+      white-space: nowrap; font-size: 14px;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(.985); }
+    .btnOutline{
+      background: #fff;
+      border: 2px solid rgba(255,122,120,.35);
+      color: var(--main2);
+      box-shadow: none;
+    }
+    .btnGreen{
+      background: var(--green);
+      color:#fff;
+      box-shadow: 0 16px 34px rgba(88,196,90,.22);
+    }
+    .btnPink{
+      background: var(--main);
+      color:#fff;
+      box-shadow: 0 16px 34px rgba(255,122,120,.22);
+    }
+    .helper{ margin-top: 8px; font-size: 12px; color: #7a7a7a; font-weight: 700; }
+
+    /* Sections */
+    section{ padding: 44px 0; }
+    .band{ background: var(--pink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+    .secTitle{
+      text-align:center;
+      margin: 0 0 10px;
+      color: var(--main2);
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: .03em;
+    }
+    .secLead{
+      max-width: 860px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+      font-weight: 700;
+      text-align:center;
+    }
+
+    /* Cloud blocks */
+    .heroLike{
+      background: var(--pink);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+      padding: 34px 0 28px;
+    }
+    .heroLike::before, .heroLike::after{
+      content:"";
+      position:absolute;
+      width: 560px; height: 360px;
+      background: rgba(255,255,255,.55);
+      border-radius: 60% 40% 60% 40% / 60% 40% 60% 40%;
+      opacity: .95;
+      pointer-events:none;
+    }
+    .heroLike::before{ left: -140px; top: 40px; transform: rotate(-8deg); }
+    .heroLike::after{ right: -180px; top: 180px; transform: rotate(10deg); }
+
+    .pillBig{
+      width: fit-content;
+      margin: 0 auto;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: var(--green);
+      color:#fff;
+      font-weight: 900;
+      letter-spacing: .03em;
+      box-shadow: 0 16px 34px rgba(88,196,90,.22);
+      position: relative;
+      z-index: 1;
+    }
+    .heroTitle{
+      text-align:center;
+      color: var(--main2);
+      font-weight: 900;
+      letter-spacing: .04em;
+      font-size: clamp(26px, 3.3vw, 44px);
+      margin: 14px 0 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .heroSub{
+      text-align:center;
+      color: var(--muted);
+      font-weight: 800;
+      margin: 0 auto 18px;
+      max-width: 920px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .cloud{
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,122,120,.18);
+      border-radius: 60px;
+      padding: 22px 22px 18px;
+      box-shadow: 0 20px 50px rgba(255,122,120,.12);
+      position: relative;
+      overflow:hidden;
+    }
+    .cloud::after{
+      content:"";
+      position:absolute;
+      inset:-40px -60px auto auto;
+      width: 200px; height: 200px;
+      background: rgba(255,122,120,.06);
+      border-radius: 60% 40% 60% 40% / 60% 40% 60% 40%;
+    }
+    .cloud h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.35;
+      color: var(--main2);
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+    .cloud p{ margin: 0; color: var(--muted); font-weight: 750; }
+    .tag{
+      display:inline-flex; align-items:center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 2px solid rgba(88,196,90,.55);
+      color: var(--green2);
+      font-weight: 900;
+      font-size: 13px;
+      background: rgba(88,196,90,.08);
+      margin: 10px 0 10px;
+    }
+    .em{ color: var(--green2); font-weight: 900; }
+
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card{
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.06);
+      position: relative;
+      overflow:hidden;
+    }
+    .card::after{
+      content:"";
+      position:absolute;
+      left:-60px; bottom:-80px;
+      width: 180px; height: 180px;
+      background: rgba(88,196,90,.08);
+      border-radius: 60% 40% 60% 40% / 60% 40% 60% 40%;
+    }
+    .card h4{ margin: 0 0 8px; font-size: 16px; font-weight: 900; color: #4a4a4a; letter-spacing:.01em; position:relative; z-index:1; }
+    .card .txt{ color: var(--muted); font-weight: 750; margin: 0; position:relative; z-index:1; }
+    .card ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-weight: 750; position:relative; z-index:1; }
+
+    /* Price highlight */
+    .priceBig{
+      text-align:center;
+      font-weight: 1000;
+      color: var(--main2);
+      font-size: clamp(34px, 5vw, 54px);
+      letter-spacing: .02em;
+      margin: 4px 0 10px;
+    }
+    .priceNote{
+      text-align:center;
+      color: var(--muted);
+      font-weight: 800;
+      margin: 0 auto;
+      max-width: 860px;
+    }
+
+    /* Steps */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .step{
+      background:#fff;
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.05);
+    }
+    .step b{
+      display:inline-flex; align-items:center; justify-content:center;
+      width: 38px; height: 38px;
+      border-radius: 14px;
+      background: rgba(255,122,120,.10);
+      color: var(--main2);
+      font-weight: 1000;
+      margin-bottom: 8px;
+    }
+    .step p{ margin: 0; color: var(--muted); font-weight: 800; font-size: 14px; }
+
+    /* FAQ */
+    .faq{
+      max-width: 940px;
+      margin: 0 auto;
+      display:grid;
+      gap: 10px;
+    }
+    details{
+      background:#fff;
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.05);
+    }
+    summary{ cursor:pointer; font-weight: 900; color:#4a4a4a; }
+    details p{ margin: 10px 0 0; color: var(--muted); font-weight: 800; }
+
+    /* Profile */
+    .profileWrap{
+      max-width: 980px;
+      margin: 0 auto;
+      background:#fff;
+      border: 1px solid rgba(255,122,120,.18);
+      border-radius: 60px;
+      padding: 22px;
+      box-shadow: 0 24px 60px rgba(255,122,120,.10);
+      position: relative;
+      overflow:hidden;
+    }
+    .profileWrap::after{
+      content:"";
+      position:absolute;
+      right:-80px; top:-80px;
+      width: 220px; height: 220px;
+      background: rgba(88,196,90,.10);
+      border-radius: 60% 40% 60% 40% / 60% 40% 60% 40%;
+    }
+    .profileGrid{
+      display:grid;
+      grid-template-columns: 240px 1fr;
+      gap: 18px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    .profileImg{
+      width: 240px; height: 240px;
+      border-radius: 26px;
+      object-fit: cover;
+      border: 6px solid rgba(255,122,120,.15);
+      box-shadow: 0 18px 40px rgba(0,0,0,.08);
+      background: #f6f6f6;
+    }
+    .profileKbd{
+      display:inline-flex; align-items:center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,122,120,.28);
+      background: rgba(255,122,120,.08);
+      color: var(--main2);
+      font-weight: 900;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .profileTitle{
+      margin: 0 0 6px;
+      color: var(--main2);
+      font-weight: 1000;
+      letter-spacing: .02em;
+      font-size: 20px;
+    }
+    .profileText{ color: var(--muted); font-weight: 800; margin: 0; }
+    .profileName{ margin: 12px 0 6px; font-weight: 1000; color:#4a4a4a; font-size: 15px; }
+    .profileList{ margin: 6px 0 0; padding-left: 18px; color: var(--muted); font-weight: 800; }
+
+    /* Final CTA (only here) */
+    .final{
+      background: linear-gradient(180deg, var(--pink) 0%, #fff 70%);
+      padding: 54px 0 66px;
+      position: relative;
+      overflow:hidden;
+    }
+    .final::before{
+      content:"";
+      position:absolute;
+      left:-120px; bottom:-140px;
+      width: 420px; height: 420px;
+      background: rgba(255,122,120,.10);
+      border-radius: 60% 40% 60% 40% / 60% 40% 60% 40%;
+    }
+    .finalBox{
+      max-width: 920px;
+      margin: 0 auto;
+      background:#fff;
+      border: 1px solid rgba(255,122,120,.18);
+      border-radius: 60px;
+      padding: 26px;
+      box-shadow: 0 26px 70px rgba(255,122,120,.14);
+      position: relative;
+      z-index: 1;
+      text-align:center;
+    }
+    .finalBox h2{ margin-bottom: 8px; }
+    .finalBox .big{ font-weight: 1000; color:#4a4a4a; font-size: 18px; margin: 0 0 10px; }
+    .finalBox .sub{ color: var(--muted); font-weight: 800; margin: 0 0 16px; }
+
+    footer{
+      background:#fff;
+      border-top: 1px solid rgba(0,0,0,.06);
+      padding: 22px 0 32px;
+      color:#7a7a7a;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){ .nav{ display:none; } }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr; }
+      .profileGrid{ grid-template-columns: 1fr; }
+      .profileImg{ width: 100%; height: 260px; }
+    }
+    @media (max-width: 520px){
+      .btn{ padding: 11px 14px; font-size: 13px; }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <div class="header">
+    <div class="container">
+      <div class="headerInner">
+        <div class="brandLogo">ケアぴた <span class="dot" aria-hidden="true"></span></div>
+
+        <nav class="nav" aria-label="site navigation">
+          <a href="#" title="求人掲載">求人掲載</a>
+          <a href="#" title="動画・写真撮影">動画・写真撮影</a>
+          <a href="#" title="ホームページセット">ホームページセット</a>
+          <a class="pill" href="#" title="ケアぴた求人サイト">ケアぴた求人サイト</a>
+        </nav>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btnOutline" href="#service">サービス詳細</a>
+          <a class="btn btnPink" href="#price">料金を見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. 料金を最初に強調（楽しいFV） -->
+  <section class="heroLike" id="priceTop">
+    <div class="container">
+      <div class="pillBig">採用人数に関係なく “一律料金”</div>
+      <h1 class="heroTitle">採用完全代行<br>一律 ¥100,000〜</h1>
+      <p class="heroSub">
+        スカウトメール、求人票作成、効果検証までまるっとお任せ。<br>
+        面倒な採用はプロに任せて、もっと大事な仕事に集中しよう。
+      </p>
+
+      <div class="grid2">
+        <div class="cloud">
+          <h3>🌱 完全代行で、負担ゼロへ</h3>
+          <span class="tag">まるっと対応</span>
+          <p>「スカウト送信」「求人票作成」「効果分析」まで一気通貫で代行。現場の忙しさを前提に設計します。</p>
+          <div class="helper">※申込みボタンは最後に1つだけにしています</div>
+        </div>
+
+        <div class="cloud">
+          <h3>💰 人数に関係なく、定額</h3>
+          <span class="tag">安心の固定価格</span>
+          <p>採用人数で料金が跳ねない。だから「まず回して改善する」意思決定がしやすいプランです。</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:14px;">
+        <a class="btn btnOutline" href="#service">サービス内容を見る</a>
+        <a class="btn btnOutline" href="#diagnosis">無料診断で分かること</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. サービス全体像 -->
+  <section id="service">
+    <div class="container">
+      <h2 class="secTitle">サービス全体像</h2>
+      <p class="secLead">採用の面倒な作業、もう悩まない。必要な工程を“最初から最後まで”まとめて代行します。</p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>✔︎ スカウトメール代行</h4>
+          <p class="txt">ターゲットに刺さる文章を作成・送信し、反応を最大化します。</p>
+        </div>
+        <div class="card">
+          <h4>✔︎ 求人票制作</h4>
+          <p class="txt">魅力的で分かりやすい求人原稿を設計。応募率アップに直結します。</p>
+        </div>
+        <div class="card">
+          <h4>✔︎ 効果検証レポート</h4>
+          <p class="txt">どの媒体・施策が効いているか丸見えに。次の打ち手につなげます。</p>
+        </div>
+        <div class="card">
+          <h4>✔︎ 改善運用（ABテスト）</h4>
+          <p class="txt">反応が出るまで改善を回す。“次につながる採用設計”へ。</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:14px;">
+        <a class="btn btnOutline" href="#pack">パックの中身を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 完全代行パックの中身 -->
+  <section class="band" id="pack">
+    <div class="container">
+      <h2 class="secTitle">採用完全代行パックの中身</h2>
+      <p class="secLead">“やること”が明確だから、任せやすい。現場が忙しくても回る形に落とします。</p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>スカウト（文章作成＋送信）</h4>
+          <ul>
+            <li>ターゲット設計</li>
+            <li>刺さる文章作成</li>
+            <li>送信・改善</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>求人票（原稿フル制作）</h4>
+          <ul>
+            <li>仕事内容の具体化</li>
+            <li>職場環境の見える化</li>
+            <li>応募導線の設計</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>運用（媒体別の勝ち方）</h4>
+          <ul>
+            <li>Indeed / ジョブメドレー 等</li>
+            <li>出し分け・改善</li>
+            <li>ルール順守で安全運用</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>効果検証（見える化）</h4>
+          <ul>
+            <li>反応・応募の可視化</li>
+            <li>改善ポイント提示</li>
+            <li>次月の戦略に反映</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:14px;">
+        <a class="btn btnOutline" href="#reasons">選ばれる理由を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 選ばれる理由 -->
+  <section id="reasons">
+    <div class="container">
+      <h2 class="secTitle">このサービスが選ばれる理由</h2>
+      <p class="secLead">「丸投げ」なのに「改善が積み上がる」。ここが強みです。</p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>🧩 完全代行で担当者の負担ゼロ</h4>
+          <p class="txt">現場が忙しくても採用が止まらない仕組みにします。</p>
+        </div>
+        <div class="card">
+          <h4>🧾 人数に関係なく一律価格</h4>
+          <p class="txt">採用人数で料金が跳ねないから安心して継続できます。</p>
+        </div>
+        <div class="card">
+          <h4>🎯 経験豊富な採用プロが最適化</h4>
+          <p class="txt">反応が出るまで“改善を回す”前提で動きます。</p>
+        </div>
+        <div class="card">
+          <h4>📈 効果検証で次につながる</h4>
+          <p class="txt">手探り採用から卒業。次の採用がラクになります。</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:14px;">
+        <a class="btn btnOutline" href="#price">料金プランを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1→4（最初に持ってきたい料金をちゃんと“楽しく”） -->
+  <section class="band" id="price">
+    <div class="container">
+      <h2 class="secTitle">料金プラン</h2>
+      <p class="secLead">採用人数に関係なく一律価格。だから「まずやって改善する」ができます。</p>
+
+      <div class="cloud" style="max-width:980px; margin: 0 auto;">
+        <h3>📦 採用支援パック</h3>
+        <div class="priceBig">一律 ¥100,000〜</div>
+        <p class="priceNote">
+          ※人数関係なし ／ ※媒体費は別途 ／ ※追加オプションも選べます
+        </p>
+
+        <div class="grid2" style="margin-top:14px;">
+          <div class="card" style="margin:0;">
+            <h4>含まれるもの（例）</h4>
+            <ul>
+              <li>スカウト文章作成＋送信</li>
+              <li>求人票制作</li>
+              <li>運用・改善</li>
+              <li>効果検証レポート</li>
+            </ul>
+          </div>
+          <div class="card" style="margin:0;">
+            <h4>よくある質問（料金）</h4>
+            <ul>
+              <li>何人採用しても追加料金なし</li>
+              <li>媒体費は別途（制作・運用は込み）</li>
+              <li>保証は不可だがABテストで最大化</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:14px;">
+          <a class="btn btnOutline" href="#pain">介護採用の悩みを見る</a>
+          <a class="btn btnOutline" href="#diagnosis">無料診断で分かること</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 課題共感 -->
+  <section class="band" id="pain">
+    <div class="container">
+      <h2 class="secTitle">介護採用の“しんどさ”は、あなたのせいじゃない</h2>
+      <p class="secLead">
+        求人が多いのに応募者が少ない。給与で大きな差もつけにくい。<br>
+        だから「設計」と「見せ方」で勝つ必要があります。
+      </p>
+
+      <div class="grid2">
+        <div class="cloud">
+          <h3>😵 応募が来ない／来ても続かない</h3>
+          <p>ミスマッチの多くは、求人で“現場のリアル”が伝わっていないことが原因のことも。</p>
+        </div>
+        <div class="cloud">
+          <h3>⏰ 忙しくて採用が後回し</h3>
+          <p>現場が回っているだけで精一杯。だからこそ “代行” が効きます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 無料診断の価値 -->
+  <section id="diagnosis">
+    <div class="container">
+      <h2 class="secTitle">無料個別診断で分かること</h2>
+      <p class="secLead">
+        いきなり契約じゃなくてOK。まずは今の求人の「勝ち筋」を可視化します。
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h4>診断でチェックすること</h4>
+          <ul>
+            <li>今の求人が「選ばれにくい理由」</li>
+            <li>仕事内容の具体化ポイント</li>
+            <li>職場環境の見える化ポイント</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>持ち帰れるもの</h4>
+          <ul>
+            <li>改善優先順位TOP5</li>
+            <li>媒体別（Indeed/ジョブメドレー等）の勝ち方</li>
+            <li>写真・原稿・構成の修正案</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step"><b>1</b><p>求人URLを共有（あれば）</p></div>
+        <div class="step"><b>2</b><p>オンラインで30分診断</p></div>
+        <div class="step"><b>3</b><p>改善ポイントをその場で共有</p></div>
+      </div>
+
+      <div style="text-align:center; margin-top:14px;">
+        <a class="btn btnOutline" href="#future">未来ビジョンを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 未来ビジョン -->
+  <section class="band" id="future">
+    <div class="container">
+      <h2 class="secTitle">面倒な採用はプロに任せて、もっと大事な仕事に集中</h2>
+      <p class="secLead">
+        採用が安定すると、現場が落ち着く。人が定着して、ケアの質も上がる。<br>
+        “採用に振り回される状態”を終わらせましょう。
+      </p>
+
+      <div class="grid2">
+        <div class="cloud">
+          <h3>🌸 現場が安定する</h3>
+          <p>採用の波が落ち着き、シフトや教育の負担が減ります。</p>
+        </div>
+        <div class="cloud">
+          <h3>🌿 次の採用がラクになる</h3>
+          <p>改善が蓄積されるので、採用が“仕組み”になります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="secTitle">よくある質問</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Q. 何人採用しても追加料金は？</summary>
+          <p>→ ありません！一律価格です。</p>
+        </details>
+        <details>
+          <summary>Q. 求人媒体費用は含まれますか？</summary>
+          <p>→ 媒体費は別途ですが、原稿制作・運用・分析はまるっと任せてOKです。</p>
+        </details>
+        <details>
+          <summary>Q. スカウト成果保証は？</summary>
+          <p>→ 個別保証はできませんが、反応改善・ABテストで最大化します。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 担当者紹介 -->
+  <section class="band" id="profile">
+    <div class="container">
+      <h2 class="secTitle">担当者紹介</h2>
+      <p class="secLead">現場と経営の両方を見ながら、採用〜定着まで“実行”で支援します。</p>
+
+      <div class="profileWrap">
+        <div class="profileGrid">
+          <img class="profileImg" src="shota.png" alt="採用支援責任者の写真" />
+
+          <div>
+            <div style="margin-bottom:10px;">
+              <span class="profileKbd">採用支援責任者</span>
+              <span class="profileKbd">現場×経営×人</span>
+            </div>
+
+            <h3 class="profileTitle">「現場×経営×人」をつなぐ、実行型プロフェッショナル。</h3>
+            <p class="profileText">
+              人材採用、組織マネジメント、事業立ち上げ、DX支援、経営改善、M&A実務まで一貫してハンズオンで支援します。
+            </p>
+
+            <div class="profileName">◇職業</div>
+            <ul class="profileList">
+              <li>経営・人事・営業コンサルタント</li>
+              <li>M&Aアドバイザリー</li>
+              <li>HRテック／RPO事業責任者</li>
+              <li>AI導入支援</li>
+              <li>新規事業プロデューサー</li>
+            </ul>
+
+            <div class="profileName">◇実績</div>
+            <ul class="profileList">
+              <li>野村證券</li>
+              <li>株式会社リクルート：営業として全国表彰・MVP複数回受賞、全国1位の成績を記録。</li>
+              <li>介護福祉施設の採用社数150社経験。ケアマネ、サビ官などの採用実績あり。</li>
+            </ul>
+
+            <div class="profileName">現在</div>
+            <ul class="profileList">
+              <li>介護福祉業界向けHRメディア／RPO事業「ケアピタ」の立ち上げ・事業責任者（indeed, Airwork とジョブメドレーでの採用支援）</li>
+              <li>経営改革・営業組織構築・DX推進</li>
+              <li>AI×B2B領域での営業支援、組織構築コンサルティング</li>
+              <li>中小企業向けM&Aアドバイザリー領域への参画</li>
+            </ul>
+
+            <div class="helper">※ここまで読んで「合いそう」と思ったら、最後に無料診断の申込みだけ置いてます</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. 最終CTA（ここだけ） -->
+  <section class="final" id="apply">
+    <div class="container">
+      <div class="finalBox">
+        <h2 class="secTitle" style="margin:0 0 10px;">採用の未来を変えませんか？</h2>
+        <p class="big">まずは無料個別診断から。</p>
+        <p class="sub">プロが「何をどう直すべきか」まで具体的にお伝えします。</p>
+
+        <!-- CTAはここだけ -->
+        <a class="btn btnGreen" href="#" aria-label="無料で診断を申し込む">無料で診断を申し込む</a>
+
+        <div class="helper">※オンライン30分／営業なし／改善案だけ持ち帰りOK</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+      <div>© <span id="y"></span> ケアぴた</div>
+      <div><a href="#top">ページ上部へ</a></div>
+    </div>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  </footer>
+
+</body>
+</html>
