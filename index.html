@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ケアぴた 採用完全代行</title>
+<meta name="description" content="求人を出しても来ない介護・福祉施設へ。Indeed・Airワーク・ジョブメドレーの運用をまるごと代行、月額10万円〜の固定。まずは30分の無料診断で、今の求人の直しどころをお渡しします。" />
+<meta property="og:title" content="求人を出しても来ない、を終わらせる｜ケアぴた 採用完全代行" />
+<meta property="og:description" content="Indeed・Airワーク・ジョブメドレーの運用をまるごと代行。月額10万円〜、採用人数に関係なく固定。30分の無料診断から。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" />
+<style>
+  /* ============================================================
+     設定（ページ末尾のスクリプト冒頭の3つの定数だけ書き換えればOK）
+     - BOOKING_URL     : Googleカレンダー「予約スケジュール」の共有リンク
+                         入れると最終CTAにカレンダーが埋め込まれ、空き枠を選んでそのまま予約できる
+     - FALLBACK_URL    : BOOKING_URL が空のときの申込み先（メール）
+     - VIDEO_EMBED_URL : ショート動画の埋め込みURL。入れると実績の下に動画枠が出る
+     ============================================================ */
+  :root{
+    --ink:#1B2734;        /* 本文・見出し（青みの濃紺） */
+    --ink-2:#4B5866;      /* 補助テキスト */
+    --paper:#F5F7F9;      /* 地（寒色寄りのオフホワイト） */
+    --card:#FFFFFF;
+    --line:#D9DFE6;
+    --coral:#FF6A67;      /* ケアぴたのブランド色 */
+    --coral-deep:#E3524F;
+    --coral-tint:#FFEDEC;
+    --moss:#2E8B57;       /* 「できる」「持ち帰れる」の肯定色 */
+    --moss-tint:#E6F4EC;
+    --shadow:0 12px 32px rgba(27,39,52,.10);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#EEF2F5; --ink-2:#AAB6C2; --paper:#121A22; --card:#1A2430; --line:#2C3946;
+      --coral:#FF7C79; --coral-deep:#FF9A98; --coral-tint:#3A2426; --moss:#5DC58B; --moss-tint:#1D3327;
+      --shadow:0 12px 32px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#EEF2F5; --ink-2:#AAB6C2; --paper:#121A22; --card:#1A2430; --line:#2C3946;
+    --coral:#FF7C79; --coral-deep:#FF9A98; --coral-tint:#3A2426; --moss:#5DC58B; --moss-tint:#1D3327;
+    --shadow:0 12px 32px rgba(0,0,0,.35);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+    font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+    font-weight:900; line-height:1.3; letter-spacing:.01em; margin:0; text-wrap:balance;
+  }
+  .mono{font-family:"DM Mono","SFMono-Regular",Menlo,monospace; font-variant-numeric:tabular-nums}
+  p{margin:0}
+  a{color:inherit}
+  img{max-width:100%; display:block}
+
+  .wrap{width:min(100% - 40px, 720px); margin-inline:auto}
+  section{padding:56px 0}
+  .eyebrow{
+    display:inline-block; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--coral-deep); margin-bottom:14px;
+  }
+  .lead{color:var(--ink-2); font-size:15px}
+
+  /* ---------- header ---------- */
+  header.top{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:14px 0;
+  }
+  .brand{font-family:"Zen Kaku Gothic New",sans-serif; font-weight:900; font-size:18px; letter-spacing:.02em}
+  .brand small{display:block; font-size:10px; font-weight:500; color:var(--ink-2); letter-spacing:.12em}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    min-height:56px; padding:0 26px; border-radius:999px; border:0; cursor:pointer;
+    font-family:"Zen Kaku Gothic New",sans-serif; font-weight:700; font-size:17px; text-decoration:none;
+    background:var(--coral); color:#fff; box-shadow:0 8px 22px rgba(255,106,103,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px); box-shadow:0 12px 26px rgba(255,106,103,.42)}
+  .btn:focus-visible{outline:3px solid var(--ink); outline-offset:3px}
+  .btn .arrow{font-family:"DM Mono",monospace; font-weight:500}
+  .btn-note{font-size:12px; color:var(--ink-2); margin-top:10px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:32px 0 48px}
+  .hero .tag{
+    display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:700;
+    background:var(--coral-tint); color:var(--coral-deep); padding:6px 12px; border-radius:6px; margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(34px,8.5vw,56px); line-height:1.18; margin-bottom:18px}
+  .hero h1 .u{
+    background:linear-gradient(transparent 62%, var(--coral-tint) 62%);
+    box-decoration-break:clone; -webkit-box-decoration-break:clone;
+  }
+  .hero .sub{font-size:clamp(16px,4vw,19px); font-weight:500; color:var(--ink-2); margin-bottom:26px}
+  .hero .sub strong{color:var(--ink)}
+  .price-strip{
+    display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--line); border-radius:12px;
+    background:var(--card); overflow:hidden; margin:26px 0 30px;
+  }
+  .price-strip div{padding:14px 6px; text-align:center; border-left:1px solid var(--line)}
+  .price-strip div:first-child{border-left:0}
+  .price-strip b{display:block; font-family:"Zen Kaku Gothic New",sans-serif; font-size:clamp(14px,3.9vw,21px); font-weight:900; line-height:1.2; letter-spacing:-.01em; white-space:nowrap}
+  .price-strip span{display:block; font-size:11px; color:var(--ink-2); margin-top:4px; letter-spacing:.02em; line-height:1.5}
+
+  /* ---------- results ---------- */
+  /* 実績バンドはライト／ダーク共通で濃紺固定（文字色は白系で固定） */
+  .results{background:#1B2734; color:#F6F8FA; padding:56px 0}
+  .results .eyebrow{color:var(--coral)}
+  .results h2{font-size:clamp(24px,6vw,32px); margin-bottom:6px; color:#fff}
+  .results .client{font-size:14px; color:#B9C4CF; margin-bottom:26px}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+  .stat{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:18px 12px 14px; text-align:center}
+  .stat .num{font-family:"DM Mono",monospace; font-size:clamp(28px,8vw,42px); font-weight:500; line-height:1; color:#fff; letter-spacing:-.02em}
+  .stat .num em{font-style:normal; font-size:.5em; color:var(--coral); margin-left:2px}
+  .stat .lbl{font-size:12px; color:#B9C4CF; margin-top:8px; line-height:1.5}
+  .quote{margin:22px 0 0; padding:18px 20px; border-left:3px solid var(--coral); background:rgba(255,255,255,.05); border-radius:0 10px 10px 0; font-size:15px; line-height:1.9}
+  .quote cite{display:block; font-style:normal; font-size:12px; color:#B9C4CF; margin-top:8px}
+  .video{margin-top:24px; aspect-ratio:9/16; max-width:320px; margin-inline:auto; border-radius:14px; overflow:hidden; background:#000; border:1px solid rgba(255,255,255,.12)}
+  .video iframe{width:100%; height:100%; border:0; display:block}
+  @media (min-width:600px){ .video{aspect-ratio:16/9; max-width:100%} }
+  .video-note{font-size:12px; color:#B9C4CF; text-align:center; margin-top:8px}
+
+  /* ---------- what we do ---------- */
+  .steps{display:grid; gap:12px; margin-top:22px}
+  .step{display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:start; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 18px 16px}
+  .step .n{font-family:"DM Mono",monospace; font-size:13px; color:var(--coral-deep); border:1.5px solid var(--coral); border-radius:8px; width:44px; height:44px; display:grid; place-items:center}
+  .step h3{font-size:18px; margin-bottom:4px}
+  .step p{font-size:14px; color:var(--ink-2)}
+  .step .media{margin-top:8px; display:flex; flex-wrap:wrap; gap:6px}
+  .step .media span{font-size:11.5px; font-weight:700; letter-spacing:.02em; padding:3px 9px; border-radius:6px; background:var(--paper); border:1px solid var(--line)}
+
+  /* ---------- price ---------- */
+  .price-card{background:var(--card); border:2px solid var(--coral); border-radius:16px; padding:26px 22px; box-shadow:var(--shadow); margin-top:22px}
+  .price-card .amt{display:flex; align-items:baseline; gap:6px; flex-wrap:wrap}
+  .price-card .amt .yen{font-family:"DM Mono",monospace; font-size:clamp(40px,11vw,56px); font-weight:500; letter-spacing:-.03em; line-height:1}
+  .price-card .amt .per{font-size:15px; font-weight:700; color:var(--ink-2)}
+  .price-card ul{list-style:none; padding:0; margin:18px 0 0; display:grid; gap:8px}
+  .price-card li{display:flex; gap:10px; align-items:flex-start; font-size:15px}
+  .price-card li::before{content:"✓"; color:var(--moss); font-weight:900; flex:0 0 auto; margin-top:1px}
+  .price-card .fine{font-size:12px; color:var(--ink-2); margin-top:14px; padding-top:12px; border-top:1px dashed var(--line)}
+
+  /* ---------- diagnosis ---------- */
+  .diag{background:var(--moss-tint)}
+  .diag .eyebrow{color:var(--moss)}
+  .take{display:grid; gap:10px; margin:20px 0 26px}
+  .take div{background:var(--card); border-radius:10px; padding:14px 16px; display:flex; gap:12px; align-items:flex-start; font-size:15px; font-weight:500}
+  .take div b{font-family:"DM Mono",monospace; font-weight:500; color:var(--moss); flex:0 0 auto}
+  .flow{display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--ink-2); margin-bottom:26px}
+  .flow span{background:var(--card); border:1px solid var(--line); padding:6px 11px; border-radius:999px; font-weight:700; color:var(--ink)}
+  .flow i{font-style:normal; color:var(--moss); font-weight:900}
+
+  /* ---------- person ---------- */
+  .person{display:grid; grid-template-columns:96px 1fr; gap:18px; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px}
+  .person img{width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--coral-tint)}
+  .person h3{font-size:17px; margin-bottom:4px}
+  .person p{font-size:13.5px; color:var(--ink-2); line-height:1.7}
+
+  /* ---------- final / booking ---------- */
+  .final{text-align:center; padding:64px 0 120px}
+  .final h2{font-size:clamp(26px,7vw,36px); margin-bottom:12px}
+  .final .lead{margin-bottom:26px}
+  .booking{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:8px; box-shadow:var(--shadow); text-align:left}
+  .booking iframe{width:100%; height:720px; border:0; display:block; border-radius:10px; background:#fff}
+  @media (max-width:600px){ .booking iframe{height:640px} }
+  .booking .btn-note{text-align:center}
+
+  /* ---------- sticky CTA (mobile) ---------- */
+  .sticky{
+    position:fixed; left:0; right:0; bottom:0; z-index:20; padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter:blur(10px); border-top:1px solid var(--line);
+    display:flex; justify-content:center;
+  }
+  .sticky .btn{width:min(100%,520px); min-height:52px; font-size:16px}
+  @media (min-width:900px){ .sticky{display:none} .final{padding-bottom:80px} }
+
+  h2{font-size:clamp(24px,6.2vw,32px)}
+  footer{padding:24px 0 40px; font-size:12px; color:var(--ink-2); text-align:center}
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important; scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">ケアぴた<small>介護・福祉 採用完全代行</small></div>
+    <a class="btn" style="min-height:42px;padding:0 16px;font-size:14px" href="#cta" data-cta>無料診断</a>
+  </header>
+</div>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="wrap">
+    <span class="tag">介護・福祉施設 専門</span>
+    <h1>求人を出しても、<br /><span class="u">来ない。</span><br />それ、原稿と運用で直ります。</h1>
+    <p class="sub">Indeed・Airワーク・ジョブメドレーの<strong>求人原稿づくりから運用・改善まで、まるごと代行</strong>。現場は面接だけしてください。</p>
+    <div class="price-strip">
+      <div><b>月額10万円〜</b><span>採用人数に関係なく固定</span></div>
+      <div><b>初月から運用</b><span>原稿は2週間で作り直し</span></div>
+      <div><b>毎月レポート</b><span>応募数と応募単価を数字で</span></div>
+    </div>
+    <a class="btn" href="#cta" data-cta>30分の無料診断を受ける <span class="arrow">→</span></a>
+    <p class="btn-note">オンライン30分／売り込みなし／改善案はそのまま持ち帰りOK</p>
+  </div>
+</section>
+
+<!-- ========== RESULTS ========== -->
+<section class="results" id="results">
+  <div class="wrap">
+    <span class="eyebrow">Case</span>
+    <h2>支援中の法人で、こう変わりました</h2>
+    <p class="client">株式会社YKT Innovation 様（ヘルパーステーションにじいろ／重度訪問介護・全国8支店）</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">2.4<em>倍</em></div><div class="lbl">月間応募数<br />（開始前 → 開始後）</div></div>
+      <div class="stat"><div class="num">50<em>%</em></div><div class="lbl">応募単価の削減<br />（約半分に）</div></div>
+      <div class="stat"><div class="num">11<em>名</em></div><div class="lbl">3ヶ月での<br />採用決定</div></div>
+    </div>
+
+    <blockquote class="quote">
+      「Indeedの運用は、ちゃんとやると本当に差が出ます。原稿と運用をしっかり整えただけで応募が2.4倍になり、3ヶ月で11名採用できました。これは絶対にやっておくべきだと思います。」
+      <cite>株式会社YKT Innovation 様（ヘルパーステーションにじいろ）</cite>
+    </blockquote>
+
+    <!-- ショート動画：VIDEO_EMBED_URL を設定すると表示 -->
+    <div class="video" id="video" hidden><iframe id="videoFrame" title="ケアぴた 採用支援の事例動画" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <p class="video-note" id="videoNote" hidden>60秒でわかる、にじいろさんの採用がどう変わったか</p>
+  </div>
+</section>
+
+<!-- ========== WHAT WE DO ========== -->
+<section id="service">
+  <div class="wrap">
+    <span class="eyebrow">What we do</span>
+    <h2>やることは3つだけ。<br />全部こちらでやります。</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <div>
+          <h3>求人原稿を、選ばれる形に作り直す</h3>
+          <p>「仕事内容」「1日の流れ」「職場の空気」を具体化。給与レンジ・シフト・資格要件の見せ方を職種ごとに直します。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <div>
+          <h3>媒体に出して、回して、改善する</h3>
+          <p>出稿・スカウト送信・ABテストを毎週。反応が出るまで原稿と配信を動かし続けます。</p>
+          <div class="media"><span>Indeed</span><span>Airワーク採用管理</span><span>ジョブメドレー</span><span>ケアぴた</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <div>
+          <h3>毎月、数字で報告する</h3>
+          <p>閲覧数・応募数・応募単価・面接設定数を1枚のレポートに。次月に何を変えるかまで書いて渡します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICE ========== -->
+<section id="price" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Price</span>
+    <h2>採用人数が増えても、料金は増えません。</h2>
+    <div class="price-card">
+      <div class="amt"><span class="yen">¥100,000<span style="font-size:.45em">〜</span></span><span class="per">／月（税別）</span></div>
+      <ul>
+        <li>求人原稿の制作・改善（職種数の上限なし）</li>
+        <li>Indeed・Airワーク・ジョブメドレー等の出稿とスカウト運用</li>
+        <li>毎月の効果レポートと次月の改善提案</li>
+        <li>何名採用しても追加費用なし・成功報酬なし</li>
+      </ul>
+      <p class="fine">※ 媒体への広告費（Indeedのクリック課金など）は別途。掲載規模により月額が変わる場合は診断時にお伝えします。最低契約期間は診断時にご説明します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DIAGNOSIS ========== -->
+<section class="diag" id="diagnosis">
+  <div class="wrap">
+    <span class="eyebrow">Free check</span>
+    <h2>まず30分、今の求人を診断します。</h2>
+    <p class="lead" style="margin-top:8px">契約の話は一切しません。今出している求人URLを見せてもらい、その場で直しどころをお伝えします。</p>
+    <div class="take">
+      <div><b>01</b>今の求人が「選ばれない理由」トップ3</div>
+      <div><b>02</b>職種別・媒体別の「勝てる原稿」の書き方</div>
+      <div><b>03</b>写真・構成の修正案（そのまま自社で直してもOK）</div>
+    </div>
+    <div class="flow"><span>空き枠を選ぶ</span><i>→</i><span>求人URLを共有</span><i>→</i><span>オンライン30分</span><i>→</i><span>改善案を持ち帰り</span></div>
+    <a class="btn" href="#cta" data-cta>無料診断の空き枠を見る <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ========== PERSON ========== -->
+<section id="person" style="padding-bottom:24px">
+  <div class="wrap">
+    <div class="person">
+      <img src="shota_new.png" alt="ケアぴた 採用支援責任者" />
+      <div>
+        <h3>担当：ケアぴた 採用支援責任者</h3>
+        <p>介護・福祉施設150社超の採用を支援。ケアマネ・サビ管・看護職など「来ない職種」の採用実績多数。リクルートでの営業表彰を経て、介護福祉専門の求人メディア「ケアぴた」を立ち上げ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA / BOOKING ========== -->
+<section class="final" id="cta">
+  <div class="wrap">
+    <h2>「出しても来ない」を、<br />今月で終わらせませんか。</h2>
+    <p class="lead" id="ctaLead">空いている枠を選んで、お名前と法人名を入れるだけで予約完了。合わなければそこで終わりで構いません。</p>
+
+    <!-- Googleカレンダー予約スケジュールの埋め込み（BOOKING_URL が空なら非表示） -->
+    <div class="booking" id="booking" hidden>
+      <iframe id="bookingFrame" title="無料診断の予約カレンダー" loading="lazy"></iframe>
+      <p class="btn-note">枠が表示されない場合は <a id="bookingLink" href="#" target="_blank" rel="noopener">別ウィンドウで予約ページを開く</a></p>
+    </div>
+
+    <!-- BOOKING_URL が空のときの予備導線（メール） -->
+    <div id="fallbackCta">
+      <a class="btn" href="#" data-cta>無料診断を申し込む <span class="arrow">→</span></a>
+      <p class="btn-note">オンライン30分／売り込みなし／改善案はそのまま持ち帰りOK</p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© ケアぴた｜介護・福祉 採用完全代行</div></footer>
+
+<div class="sticky"><a class="btn" href="#cta" data-cta>無料診断の空き枠を見る →</a></div>
+
+<script>
+  // ==============================================
+  // ▼ Googleカレンダー「予約スケジュール」の共有リンク
+  //   作り方: Googleカレンダー → 「作成」→「予約スケジュール」→ 30分枠・受付期間を設定
+  //          →「予約フォーム」で 法人名／電話番号／今出している求人URL を追加 → 保存 →「予約ページを共有」のリンクをコピー
+  //   例: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0xxxxxxxx"
+  const BOOKING_URL = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1RY7aDSLjSQFes44jF7hS3bUb9S3khSyu3EYbTpfe0YE_SVIzry7Y5Ov1SazZdAzcVIQj0xHmE";
+  // 短縮リンク（メール等で案内する用）: https://calendar.app.google/j8TCKbX1BvkvgAuw7
+  // ▼ BOOKING_URL が空のときの予備の申込み先（メール）
+  const FALLBACK_URL = "mailto:skonishi22@gmail.com?subject=%E3%80%90%E7%84%A1%E6%96%99%E8%A8%BA%E6%96%AD%E3%80%91%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF&body=%E6%B3%95%E4%BA%BA%E5%90%8D%EF%BC%9A%0A%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E4%BB%8A%E5%87%BA%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E6%B1%82%E4%BA%BA%E3%81%AEURL%EF%BC%88%E3%81%82%E3%82%8C%E3%81%B0%EF%BC%89%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E6%97%A5%E6%99%82%EF%BC%88%E7%AC%AC3%E5%B8%8C%E6%9C%9B%E3%81%BE%E3%81%A7%EF%BC%89%EF%BC%9A%0A";
+  // ▼ ショート動画の埋め込みURL（YouTube: https://www.youtube.com/embed/動画ID ）。空なら動画枠は非表示
+  const VIDEO_EMBED_URL = "";
+  // ==============================================
+
+  if (BOOKING_URL) {
+    // ?gv=true を付けるとカレンダー部分だけが埋め込み表示される
+    const embed = BOOKING_URL + (BOOKING_URL.includes('?') ? '&' : '?') + 'gv=true';
+    document.getElementById('bookingFrame').src = embed;
+    document.getElementById('bookingLink').href = BOOKING_URL;
+    document.getElementById('booking').hidden = false;
+    document.getElementById('fallbackCta').hidden = true;
+    // ページ内の各ボタンは #cta へスクロールし、そのままカレンダーで枠を選べる
+  } else {
+    document.getElementById('ctaLead').textContent = '30分で、直しどころが分かります。合わなければそこで終わりで構いません。';
+    document.querySelectorAll('#cta a[data-cta]').forEach(a => { a.href = FALLBACK_URL; });
+  }
+  if (VIDEO_EMBED_URL) {
+    document.getElementById('videoFrame').src = VIDEO_EMBED_URL;
+    document.getElementById('video').hidden = false;
+    document.getElementById('videoNote').hidden = false;
+  }
+</script>
+</body>
+</html>
